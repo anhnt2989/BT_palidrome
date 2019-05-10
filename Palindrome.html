@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+</head>
+
+<style>
+    .nd {
+        text-align: center;
+    }
+    p {
+        font-size: xx-large;
+    }
+</style>
+
+<div class="nd">
+    <p>Nhập vào 1 chuỗi mà bạn cho là Palidrome</p>
+    <input type="text" id="input" placeholder="Nhập chuỗi vào đây!"/>
+    <br><br>
+    is Palindrome ? Nhấn f5 để nhận kết quả >.<
+    <p id="result"></p>
+</div>
+
+<body>
+            <script>
+                let inp = (document.getElementById("input").value).split("");
+                document.getElementById("result").innerHTML = isPalindrome(inp);
+
+                function isPalindrome(x) {
+                    if (x.length === 1) {
+                        return true;
+                    } else if (x.length === 0) {
+                        return true;
+                    } else if (x[0] === x[x.length - 1]) {
+                        x.pop();
+                        x.shift();
+                        return isPalindrome(x);
+                    }
+                    return false;
+                }
+            </script>
+</body>
+</html>
